@@ -18,6 +18,8 @@ main {
 }
 
 .main_nav {
+  display: flex;
+  flex-direction: column;
   width: 250px;
   padding: 20px;
   background-color: black;
@@ -100,15 +102,13 @@ main {
 }
 
 .main_nav_footer {
-  display: flex;
-
+  padding: 10px;
   color: white;
-
+  margin-top: auto;
 }
 
-.prova-footer {
-  /* flex-direction: column; */
-  align-items: flex-start;
+.main_nav_footer hr {
+  margin: 5px 0; 
 }
 
 .far.fa-user-circle {
