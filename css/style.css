@@ -158,6 +158,7 @@ main {
   padding: 110px 20px 20px;
   background-color: #141922;
   overflow-y: scroll;
+  z-index: 5
 }
 
 .cta {
@@ -170,6 +171,7 @@ main {
   height: 90px;
   width: calc(100% - 250px);
   background: rgba(0, 0, 0, 0.5);
+  z-index: 3
 }
 
 .cta a {
@@ -194,7 +196,6 @@ main {
   text-transform: uppercase;
   list-style: none;
   margin-bottom: 20px;
-
 }
 
 .nav_content a {
@@ -207,29 +208,38 @@ main {
   padding-bottom: 25px;
 }
 
-.recently_played {
-  /* background: red; */
-  width: 100%;
-  margin: auto;
-}
-
-h2 {
+.recently_played h2 {
   color: white;
   margin-bottom: 15px;
 }
 
-figure {
-  float:left;
-  width: 150px;
-  height: 170px;
-  margin-bottom: 20px;
-  margin-left: 2%;
-  background: yellow;
-  border: 1px solid purple;
-  position: relative;
+.album_covers {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.cover {
+  width: calc(100% / 6);
+  padding: 20px 10px;
+  text-align: center;
+}
 
+.cover_img {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.cover img {
+  width: 100%;
+}
+
+.cover h3 {
+  color: white
+}
+
+.cover h4 {
+  color:#7D7F84
+}
 
 .album_layover {
   position: absolute;
@@ -237,7 +247,8 @@ figure {
   left:0;
   width: 100%;
   height: 100%;
-  opacity: 0
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
 }
 
 .album_layover i{
@@ -249,17 +260,163 @@ figure {
   cursor: pointer;
 }
 
-figure:hover .album_layover {
+.cover_img:hover .album_layover {
   opacity: 1;
 }
 
-footer {
-  width: 100%;
-  height: 90px;
-  background: brown;
+.custom_playlist,
+.popular_artists h2 {
+  color: white
 }
 
-@media screen and ( max-width: 576px ) {
+.custom_playlist,
+.popular_artists h5 {
+  color: #7D7F84
+}
+
+#round_cover {
+  border-radius: 50%;
+}
+
+#round_layover {
+  border-radius: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  background: #282828;
+}
+
+.song_data {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  height: 100%;
+  background: #282828;
+}
+
+.song_cover {
+  width: 50px;
+  text-align: center;
+}
+
+.song_cover img {
+  width: 100%
+}
+
+.player_controller {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  height: 100%;
+  background:#282828;
+  flex-shrink: 0;
+}
+
+.controller_top {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  height: 50%;
+  background-color: #282828;
+}
+
+.controller_top i {
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.controller_top .far.fa-play-circle {
+  font-size: 30px;
+}
+
+.controller_bottom {
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  width: 100%;
+  height: 50%;
+  background-color: #282828;
+}
+
+.bar_controller {
+  height: 4px;
+  width: 400px;
+  border-radius: 2px;
+}
+
+.filled_controller{
+  float: left;
+  width: 20%;
+  height: 4px;
+  background: #C1C1C1;
+}
+
+.empty_controller {
+  float: left;
+  width: 80%;
+  height: 4px;
+  background: #5A5A5A;
+}
+
+
+.player_audio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  height: 100%;
+  background: #282828;
+}
+
+.bar {
+  height: 4px;
+  width: 150px;
+  border-radius: 2px;
+}
+
+.filled {
+  float: left;
+  width: 20%;
+  height: 4px;
+  background: #C1C1C1;
+}
+
+.empty {
+  float: left;
+  width: 70%;
+  height: 4px;
+  background: #5A5A5A;
+}
+
+@media screen and (max-width : 1199px) {
+
+  .cover {
+    width: calc(100% / 4);
+  }
+
+}
+
+
+@media screen and (max-width : 991px) {
+
+  .cover {
+    width: calc(100% / 2);
+  }
+
+  .player-controller {
+    width: 50%
+  }
+
+}
+
+
+@media screen and ( max-width: 767px ) {
 
   .main_nav {
     width: 50px;
@@ -318,13 +475,9 @@ footer {
     display: none;
   }
 
-}
-
-@media screen and ( min-width: 1200px ) {
-
-  figure {
-    width: 14%;
-    height: 200px
+  .song_data i{
+    display: block;
+    
   }
 
 }
