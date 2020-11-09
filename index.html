@@ -11,15 +11,17 @@
   <body>
     <div class="wrapper">
       <main>
+        <div class="active_top"></div>
         <section class="main_nav">
           <div class="main_nav_top">
             <div class="main_nav_header">
+              <i class="fab fa-spotify"></i>
               <img src="img/logo.svg" alt="Logo My Spotify">
             </div>
             <div class="main_nav_menu">
               <ul>
                 <li>
-                <a href="#"><i class="fas fa-home"></i>
+                  <a href="#"><i class="fas fa-home "></i>
                   <span>Home</span></a>
                 </li>
                 <li>
@@ -50,8 +52,9 @@
               </div>
 
             <div class="main_nav_footer">
-              <i class="far fa-arrow-alt-circle-down"></i>
-              <span>installa app</span>
+              <div class="main_nav_footer_top">
+                <span><i class="far fa-arrow-alt-circle-down"></i>installa app</span>
+              </div>
               <hr>
               <i class="far fa-user-circle"></i>
             </div>
@@ -65,7 +68,7 @@
 
           <div class="nav_content">
             <ul>
-              <li><a href="#">in evidenza</a></li>
+              <li><a class="active" href="#">in evidenza</a></li>
               <li><a href="#">podcast</a></li>
               <li><a href="#">classifiche</a></li>
               <li><a href="#">generi e mood</a></li>
@@ -207,9 +210,13 @@
           <div class="song_cover">
             <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg" alt="">
           </div>
-          <p>Sinister<br><span>Brano Nome</span></p>
-          <i class="far fa-heart"></i>
-          <i class="far fa-folder"></i>
+          <div class="song_titles">
+            <p>Sinister<br><span>Brano Nome</span></p>
+          </div>
+          <div class="song_icons">
+            <i class="far fa-heart"></i>
+            <i class="far fa-folder"></i>
+          </div>
         </div>
 
         <div class="player_controller">
@@ -224,7 +231,9 @@
           <div class="controller_bottom">
             <p>0:25</p>
             <div class="bar_controller">
-              <div class="filled_controller"></div>
+              <div class="filled_controller">
+              </div>
+              <i class="fas fa-circle"></i>
               <div class="empty_controller"></div>
             </div>
             <p>4:35</p>

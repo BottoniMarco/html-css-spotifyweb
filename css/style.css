@@ -41,10 +41,14 @@ main {
   margin-bottom: 20px;
 }
 
+.fab.fa-spotify {
+  display: none;
+}
+
 .plus {
   margin: 20px 0;
   text-decoration: none;
-  color: white;
+  color: #A3A3A3;
   display: inline-block;
 }
 
@@ -55,9 +59,19 @@ main {
   height: 35px;
   line-height: 35px;
   text-align: center;
-  background-color: grey;
-  color: white;
+  background-color: #A3A3A3;
+  color: black;
+  font-size: 24px;
+  font-weight : bold;
   margin-right: 10px;
+}
+
+.plus:hover {
+  color: white;
+}
+
+.plus:hover::before {
+  background:  white
 }
 
 .main_nav_menu ul {
@@ -79,28 +93,30 @@ main {
 .main_nav_menu li :hover {
   color: white
 }
+.active_top {
+  position: absolute;
+  display: inline-block;
+  margin-right: 25px;
+}
 
+.active_top::after {
+  position: absolute;
+  left: 0;
+  top: 95px;
+  content: "";
+  display: block;
+  height: 30px;
+  width: 3px;
+  background-color: #ADFF2F;
+}
 .main_nav_playlist h3{
   color: white;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
 
-
-.main_nav_playlist p {
-  display: inline-block;
-  color: #A3A3A3;
-  font-size: 16px;
-}
-
 .main_nav_playlist {
   overflow: hidden;
-}
-
-.fas.fa-plus-square {
-  color: #A3A3A3;
-  font-size: 35px;
-  margin-bottom: 15px;
 }
 
 .main_nav_playlist ul {
@@ -122,6 +138,10 @@ main {
 .scroll_playlist {
   height: 60%;
   overflow-y: auto;
+}
+
+.scroll_playlist a:hover {
+  color: white
 }
 
 .main_nav_footer {
@@ -149,6 +169,12 @@ main {
 .far.fa-arrow-alt-circle-down {
   color: #A3A3A3;
   font-size: 20px;
+  padding-right: 5px
+}
+
+.main_nav_footer_top span:hover,
+.main_nav_footer_top i:hover {
+  color: white
 }
 
 .main_content {
@@ -171,7 +197,7 @@ main {
   height: 90px;
   width: calc(100% - 250px);
   background: rgba(0, 0, 0, 0.5);
-  z-index: 3
+  z-index: 2
 }
 
 .cta a {
@@ -182,6 +208,10 @@ main {
   color: white;
   border: 1px solid white;
   border-radius: 25px;
+}
+
+.cta a:hover {
+  font-size: 20px;
 }
 
 .nav_content {
@@ -198,8 +228,29 @@ main {
   margin-bottom: 20px;
 }
 
+.active {
+  position: relative;
+  display: inline-block;
+}
+
+.active::after {
+  position: relative;
+  left: 30%;
+  top: 3px;
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30%;
+  background-color: #ADFF2F;
+}
+
 .nav_content a {
   color: #5C6065;
+  text-decoration: none;
+}
+
+.nav_content a:hover {
+  color: white;
   text-decoration: none;
 }
 
@@ -264,7 +315,11 @@ main {
   opacity: 1;
 }
 
-.custom_playlist,
+.far.fa-play-circle {
+  color: white;
+}
+
+.custom_playlist h2,
 .popular_artists h2 {
   color: white
 }
@@ -300,12 +355,42 @@ footer {
 }
 
 .song_cover {
-  width: 50px;
+  width: 60px;
+  margin-left: 5px;
+  margin-right: 10px;
   text-align: center;
 }
 
 .song_cover img {
   width: 100%
+}
+
+.song_titles {
+  width: 50%
+}
+
+.song_titles p {
+  color: white;
+  font-weight: bold;
+}
+
+.song_titles span {
+  color: #878787;
+  font-size: 10px;
+}
+
+.song_titles span:hover {
+  color: white;
+  text-decoration: underline;
+  font-size: 10px;
+}
+
+.song_icons {
+  color: #878787
+}
+
+.song_icons i:hover {
+  color: white;
 }
 
 .player_controller {
@@ -329,10 +414,15 @@ footer {
 .controller_top i {
   font-size: 20px;
   margin-left: 15px;
+  color: white
 }
 
 .controller_top .far.fa-play-circle {
   font-size: 30px;
+}
+
+.controller_top .far.fa-play-circle:hover {
+  font-size: 35px;
 }
 
 .controller_bottom {
@@ -344,10 +434,22 @@ footer {
   background-color: #282828;
 }
 
+.controller_bottom p {
+  color: white;
+  font-size: 14px;
+}
+
 .bar_controller {
   height: 4px;
   width: 400px;
   border-radius: 2px;
+}
+
+.fas.fa-circle {
+
+  display: none;
+  font-size: 14px;
+  color: white
 }
 
 .filled_controller{
@@ -364,6 +466,23 @@ footer {
   background: #5A5A5A;
 }
 
+.bar_controller:hover .filled_controller  {
+  background: lightgreen;
+  width:calc(20% - 40px);
+  cursor : pointer;
+  display: flex;
+}
+
+.bar_controller:hover .empty_controller {
+  float: right;
+}
+
+.bar_controller:hover .fas.fa-circle{
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+
+}
 
 .player_audio {
   display: flex;
@@ -372,6 +491,10 @@ footer {
   width: 250px;
   height: 100%;
   background: #282828;
+}
+
+.player_audio i {
+  color: white;
 }
 
 .bar {
@@ -430,6 +553,11 @@ footer {
 
   .cta {
     width: calc(100% - 50px);
+    position: absolute;
+  }
+
+  .cta a {
+    margin: 0;
   }
 
   .main_nav_top {
@@ -475,9 +603,18 @@ footer {
     display: none;
   }
 
-  .song_data i{
+  .main_nav_header img {
+    display: none
+  }
+
+  .fab.fa-spotify {
     display: block;
-    
+    font-size: 25px;
+    color: white;
+  }
+
+  .active_top {
+    display: none;
   }
 
 }
