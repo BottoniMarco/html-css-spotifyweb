@@ -445,18 +445,12 @@ footer {
   border-radius: 2px;
 }
 
-.fas.fa-circle {
-
-  display: none;
-  font-size: 14px;
-  color: white
-}
-
 .filled_controller{
   float: left;
   width: 20%;
   height: 4px;
   background: #C1C1C1;
+  position: relative;
 }
 
 .empty_controller {
@@ -464,11 +458,23 @@ footer {
   width: 80%;
   height: 4px;
   background: #5A5A5A;
+
+}
+
+.player_cursor{
+  position: absolute;
+  display: none;
+  top:50%;
+  right: -7px;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
 }
 
 .bar_controller:hover .filled_controller  {
   background: lightgreen;
-  width:calc(20% - 40px);
   cursor : pointer;
   display: flex;
 }
@@ -477,11 +483,8 @@ footer {
   float: right;
 }
 
-.bar_controller:hover .fas.fa-circle{
-  display: flex;
-  align-items: center;
-  justify-content:flex-start;
-
+.bar_controller:hover .player_cursor{
+  display:block
 }
 
 .player_audio {
@@ -508,14 +511,30 @@ footer {
   width: 20%;
   height: 4px;
   background: #C1C1C1;
+  position: relative;
 }
 
 .empty {
   float: left;
-  width: 70%;
+  width: 80%;
   height: 4px;
   background: #5A5A5A;
 }
+
+.player_audio:hover .filled  {
+  background: lightgreen;
+  cursor : pointer;
+  display: flex;
+}
+
+.player_audio:hover .empty {
+  float: right;
+}
+
+.player_audio:hover .player_cursor{
+  display:block
+}
+
 
 @media screen and (max-width : 1199px) {
 
@@ -613,8 +632,46 @@ footer {
     color: white;
   }
 
+  .main_nav_footer {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .far.fa-arrow-alt-circle-down {
+    margin-left: 17px;
+    color: white;
+    font-size: 15px;
+  }
+
+  .far.fa-user-circle {
+    margin-left: 12px;
+    color: white;
+    font-size: 25px;
+  }
   .active_top {
     display: none;
   }
 
+  .player_audio {
+    width: 20%
+  }
+
+  .controller_top i {
+    font-size: 20px;
+    margin-left: 5px;
+    color: white
+  }
+}
+
+@media screen and ( max-width: 400px ) {
+
+  .song_data {
+    width: 60%
+  }
+
+  .song_titles {
+    width: 20%
+  }
 }
